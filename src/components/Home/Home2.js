@@ -19,10 +19,9 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 😁
+            Programming sparked my interest and I have at least learned something... 😁
               <br />
-              <br />I am proficient in the fundamental building blocks like
+              <br />I have a solid understanding of basic building blocks such as 
               <i>
                 <b className="purple"> Python , C++ , React. </b>
               </i>

@@ -29,7 +29,7 @@ function AboutCard() {
             </li>
           </ul>
 
-          <p style={{ color: "rgb(155 126 172)" }}>
+          <p style={{ color: "violet" }}>
             "Displicine and continous Effort can only make the difference"{" "}
           </p>
           <footer className="blockquote-footer">Mohinsh</footer>
