@@ -19,15 +19,13 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-            Programming sparked my interest and I have at least learned something... 😁
+            I'm passionate about programming and building <strong className="purple">innovative</strong> web technologies and products.   
               <br />
-              <br />I have a solid understanding of basic building blocks such as 
-              <i>
-                <b className="purple"> Python , C++ , React. </b>
-              </i>
+              <br />With a solid foundation in <strong className="purple">Python  C++  React</strong>  ...  I always try to create <strong className="purple">impactful</strong> solutions.
+      
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
+              My field of Interest's are building new  &nbsp;
               <i>
                 <b className="purple">Web Technologies and Products </b> and
                 also in areas related to{" "}
@@ -48,6 +46,10 @@ function Home2() {
               <i>
                 <b className="purple"> React.js and Express.js</b>
               </i>
+              <br />
+              <br />
+
+              <span>Always eager to <strong className="purple">learn</strong>, <strong className="purple">innovate</strong> , <strong className="purple">collaborate</strong> to push the boundaries of technology.</span>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
