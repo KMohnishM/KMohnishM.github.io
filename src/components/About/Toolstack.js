@@ -4,7 +4,7 @@ import {
   SiVisualstudiocode,
   SiAmazonaws,
   SiDiscord,
-  SiRender,
+  SiGithubpages,
   SiWindows11,
 } from "react-icons/si";
 
@@ -24,7 +24,7 @@ function Toolstack() {
         <SiDiscord />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiRender />
+        <SiGithubpages />
       </Col>
     </Row>
   );
