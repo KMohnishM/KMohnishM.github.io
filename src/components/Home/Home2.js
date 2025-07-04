@@ -19,37 +19,24 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-            I'm passionate about programming and building <strong className="purple">innovative</strong> web technologies and products.   
-              <br />
-              <br />With a solid foundation in <strong className="purple">Python  C++  React</strong>  ...  I always try to create <strong className="purple">impactful</strong> solutions.
-      
+              I am <strong className="purple">Mohnish Kodukulla</strong>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span>, passionate about <span className="purple">Full-Stack Development</span>, <span className="purple">Cloud Infrastructure</span>, and <span className="purple">AI-driven systems</span>.
               <br />
               <br />
-              My field of Interest's are building new  &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  AI-ML
-                </b>
-              </i>
+              I have built and deployed end-to-end applications using the <span className="purple">MERN stack</span>, <span className="purple">Next.js</span>, <span className="purple">Redis</span>, and <span className="purple">Docker</span>, and have experience managing real-time systems and monitoring pipelines using <span className="purple">Prometheus</span> and <span className="purple">Grafana</span>.
               <br />
               <br />
-            Whenever the opportunity arises, I channel my passion for building products through <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Express.js</b>
-              </i>
+              My projects integrate scalable backend architectures with intelligent components, including <span className="purple">Generative AI</span> and <span className="purple">LLM-based workflows</span>.
               <br />
               <br />
-
-              <span>Always eager to <strong className="purple">learn</strong>, <strong className="purple">innovate</strong> , <strong className="purple">collaborate</strong> to push the boundaries of technology.</span>
+              I am particularly drawn to solving problems at the intersection of <span className="purple">systems engineering</span> and <span className="purple">AI</span>, including real-time collaboration, anomaly detection, and adaptive learning platforms.
+              <br />
+              <br />
+              I thrive in fast-paced, exploratory environments and am always eager to push boundaries with <span className="purple">automation</span>, <span className="purple">optimization</span>, and <span className="purple">meaningful tech applications</span>.
+              <br />
+              <br />
+              <span>
+                Forever eager to <strong className="purple">learn</strong>, <strong className="purple">innovate</strong>, and <strong className="purple">push boundaries</strong> — one system at a time.
+              </span>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
