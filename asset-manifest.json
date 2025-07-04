@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/static/css/main.c9b94894.css",
-    "main.js": "/static/js/main.3478ea33.js",
+    "main.js": "/static/js/main.8b4c0c0a.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/blog.png": "/static/media/blog.e96077f84b1edaef353c.png",
     "static/media/logo.png": "/static/media/logo.3c1b9dfc9ee2c3ec8c6e.png",
     "static/media/codeEditor.png": "/static/media/codeEditor.1b585492490c8c1cace9.png",
     "static/media/chatify.png": "/static/media/chatify.190d92f052a01fad7583.png",
-    "static/media/MohnishKodukullaResume.pdf": "/static/media/MohnishKodukullaResume.493b6610fdd3e268d0c9.pdf",
     "static/media/Homepg.svg": "/static/media/Homepg.75041469660d97fab2bfd96cd9b582b6.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/CV_upd.pdf": "/static/media/CV_upd.840acb631cfedf23ffa0.pdf",
     "static/media/leaf.png": "/static/media/leaf.85695229f481c403fa98.png",
     "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
     "static/media/Av.svg": "/static/media/Av.f52cb6d4e921bf6e8f725d4a7dac5a94.svg",
     "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/index.html",
     "main.c9b94894.css.map": "/static/css/main.c9b94894.css.map",
-    "main.3478ea33.js.map": "/static/js/main.3478ea33.js.map",
+    "main.8b4c0c0a.js.map": "/static/js/main.8b4c0c0a.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9b94894.css",
-    "static/js/main.3478ea33.js"
+    "static/js/main.8b4c0c0a.js"
   ]
 }
