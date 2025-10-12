@@ -6,7 +6,7 @@ const config = {
   initialMessages: [
     createChatBotMessage("👋 Hi! I'm Mohnish's AI assistant. Ask me about his projects, skills, or how to contact him!"),
   ],
-  placeholderText: "Type your message...",
+  placeholderText: "Type and press Enter…",
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
   },

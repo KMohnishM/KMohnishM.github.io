@@ -1,13 +1,14 @@
-class MessageParser {
-  constructor(actionProvider, state) {
-    this.actionProvider = actionProvider;
-    this.state = state;
-  }
+import React from 'react';
 
-  parse(message) {
-    // For now, pass any message to Gemini
-    this.actionProvider.handleGeminiResponse(message);
-  }
+// Functional MessageParser for react-chatbot-kit v2
+export default function MessageParser({ children, actions }) {
+  const parse = (message) => {
+    actions.handleGeminiResponse(message);
+  };
+
+  return React.Children.map(children, (child) =>
+    React.cloneElement(child, {
+      parse,
+    })
+  );
 }
-
-export default MessageParser;

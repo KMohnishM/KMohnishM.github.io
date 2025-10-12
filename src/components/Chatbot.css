@@ -29,6 +29,7 @@
 .react-chatbot-kit-chat-container {
   background: linear-gradient(135deg, rgba(12, 5, 19, 0.5), rgba(200, 100, 240, 0.3)) !important;
   backdrop-filter: blur(12px) !important;
+  width: 400px !important; /* Match the wrapper width */
   -webkit-backdrop-filter: blur(12px) !important;
   border-radius: 15px !important;
   border: 1px solid rgba(199, 112, 240, 0.4) !important;
@@ -100,6 +101,7 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
   padding: 12px 15px !important;
   font-size: 14px !important;
+  width: 100% !important; /* Ensure header spans full width */
 }
 
 /* Glass-like input container */
@@ -114,6 +116,7 @@
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+  width: 100% !important; /* Ensure input container spans full width */
 }
 
 /* Input box */
@@ -128,6 +131,8 @@
   transition: all 0.3s ease !important;
   font-weight: 400 !important;
   letter-spacing: 0.3px !important;
+  flex: 1 !important; /* Allow the input to expand and fill available space */
+  width: 100% !important; /* Full width since send button is hidden */
 }
 
 .react-chatbot-kit-chat-input:focus {
@@ -147,21 +152,7 @@
 
 /* Input button */
 .react-chatbot-kit-chat-btn-send {
-  background: linear-gradient(135deg, #c770f0, #8c00ff) !important;
-  border-radius: 50% !important;
-  width: 40px !important;
-  height: 40px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: all 0.3s ease !important;
-  position: relative !important;
-  border: none !important;
-  box-shadow: 
-    0 3px 10px rgba(0, 0, 0, 0.2),
-    0 0 15px rgba(199, 112, 240, 0.4) !important;
-  cursor: pointer !important;
+  display: none !important; /* Hide the send button entirely; use Enter to send */
 }
 
 .react-chatbot-kit-chat-btn-send:hover {
@@ -172,18 +163,9 @@
     0 0 20px rgba(199, 112, 240, 0.6) !important;
 }
 
-.react-chatbot-kit-chat-btn-send svg {
-  display: none !important;
-}
-
-.react-chatbot-kit-chat-btn-send:before {
-  content: "➤" !important;
-  font-size: 18px !important;
-  color: white !important;
-  transform: rotate(90deg) !important;
-  display: block !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-}
+/* Remove icon styling since button is hidden */
+.react-chatbot-kit-chat-btn-send svg { display: none !important; }
+.react-chatbot-kit-chat-btn-send:before { display: none !important; content: none !important; }
 
 /* Add a subtle pulse effect on hover */
 @keyframes sendButtonPulse {
@@ -214,7 +196,15 @@
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
   position: relative !important;
-  overflow: hidden !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: 400px !important;
+  width: 100% !important; /* Ensure full width */
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(199, 112, 240, 0.7) rgba(40, 20, 60, 0.3) !important;
+  /* display: flex !important; */
+  /*flex-direction: column !important;  Stack messages vertically */
+  /*align-items: flex-start !important;  Align all content to the left */
 }
 
 /* Add cosmic stars effect */
@@ -238,9 +228,34 @@
   pointer-events: none !important;
 }
 
+/* Custom scrollbar styling for Webkit browsers (Chrome, Safari, newer Edge) */
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+  width: 6px !important;
+  background-color: rgba(40, 20, 60, 0.3) !important;
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c770f0, #8c00ff) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #d683ff, #9d20ff) !important;
+}
+
 @keyframes sparkle {
   0% { background-position: 0 0; }
   100% { background-position: 200px 200px; }
+}
+
+/* Bot avatar container */
+.react-chatbot-kit-chat-bot-avatar-container {
+  display: flex !important;
+  align-items: flex-start !important; /* Align to the top */
+  justify-content: flex-start !important; /* Align to the left */
+  margin-right: 8px !important; /* Add space between avatar and message */
 }
 
 /* Custom Avatar styling */
@@ -269,12 +284,23 @@
   display: none !important;
 }
 
+/* Hide user avatar completely */
+.react-chatbot-kit-user-avatar {
+  display: none !important;
+}
+
+/* Adjust user chat message alignment without avatar */
+.react-chatbot-kit-user-chat-message-container {
+  margin-right: 0 !important;
+  justify-content: flex-end !important;
+}
+
 /* Bot message */
 .react-chatbot-kit-chat-bot-message {
   background: linear-gradient(135deg, rgba(199, 112, 240, 0.8), rgba(140, 0, 255, 0.6)) !important;
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
-  border-radius: 15px 15px 0 15px !important;
+  border-radius: 15px 15px 15px 0 !important; /* Fixed: top-left, top-right, bottom-right, bottom-left */
   box-shadow: 
     0 4px 15px rgba(0, 0, 0, 0.15), 
     0 0 15px rgba(199, 112, 240, 0.3) !important;
@@ -284,6 +310,10 @@
   z-index: 1 !important;
   animation: messageAppear 0.5s forwards !important;
   transform-origin: bottom left !important;
+  max-width: 80% !important; /* Limit message width while allowing room */
+  word-wrap: break-word !important; /* Ensure text wraps within the container */
+  margin-right: auto !important; /* Push to the left */
+  margin-left: 0 !important; /* No margin on the left side */
 }
 
 .react-chatbot-kit-chat-bot-message::after {
@@ -323,7 +353,7 @@
   background: linear-gradient(135deg, rgba(255, 165, 0, 0.4), rgba(255, 200, 100, 0.3)) !important; /* Orange gradient to match theme */
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
-  border-radius: 15px 15px 15px 0 !important;
+  border-radius: 15px 15px 0 15px !important; /* Fixed: top-left, top-right, bottom-right, bottom-left */
   color: white !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
   box-shadow: 
@@ -335,6 +365,8 @@
   z-index: 1 !important;
   animation: userMessageAppear 0.5s forwards !important;
   transform-origin: bottom right !important;
+  max-width: 80% !important; /* Limit message width while allowing room */
+  word-wrap: break-word !important; /* Ensure text wraps within the container */
 }
 
 .react-chatbot-kit-user-chat-message::after {
@@ -368,12 +400,14 @@
 .react-chatbot-kit-chat-bot-message-arrow {
   border-right: 8px solid rgba(140, 0, 255, 0.6) !important; /* Match the darker color in gradient */
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2)) !important;
+  bottom: 0 !important; /* Position at bottom */
 }
 
 /* Arrow for user message */
 .react-chatbot-kit-user-chat-message-arrow {
   border-left: 8px solid rgba(255, 165, 0, 0.4) !important; /* Match the user message color */
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2)) !important;
+  bottom: 0 !important; /* Position at bottom */
 }
 
 /* Custom Toggle Button */
@@ -389,7 +423,7 @@
     0 0 30px rgba(199, 112, 240, 0.5),
     inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease !important;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background 0.25s ease !important;
   position: relative !important;
   overflow: hidden !important;
   animation: buttonPulse 3s infinite !important;
@@ -405,6 +439,11 @@
     0 8px 25px rgba(0, 0, 0, 0.4),
     0 0 30px rgba(199, 112, 240, 0.8) !important;
   background: linear-gradient(135deg, #d683ff, #9d20ff) !important;
+}
+
+.chatbot-toggle-btn:active {
+  transform: scale(0.94) !important;
+  filter: brightness(0.95) !important;
 }
 
 .toggle-icon {
@@ -435,31 +474,79 @@
 /* Close Button */
 .chatbot-wrapper {
   position: relative !important;
+  width: 400px !important; /* Increased width from 350px to 400px */
+  height: 500px !important; /* Set a fixed height for consistency */
+  transform-origin: bottom right !important;
+  animation: chatOpen 260ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+  opacity: 0; /* Start hidden, animation will bring to 1 */
+}
+
+@keyframes chatOpen {
+  0% {
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Bot message container alignment */
+.react-chatbot-kit-chat-bot-message-container {
+  display: flex !important;
+  justify-content: flex-start !important; /* Align to the left */
+  padding-right: 30px !important; /* Add some padding from the right */
+  width: 100% !important; /* Full width container */
+  margin: 8px 0 !important; /* Add vertical spacing between message groups */
+  align-items: flex-start !important; /* Align items to the start */
+}
+
+/* Space between messages */
+.react-chatbot-kit-chat-bot-message {
+  margin-bottom: 12px !important;
+  position: relative !important;
+  z-index: 2 !important; /* Ensure messages appear above the stars background */
+  margin-left: 0 !important; /* Ensure no left margin */
+}
+
+.react-chatbot-kit-user-chat-message {
+  margin-bottom: 12px !important;
+  position: relative !important;
+  z-index: 2 !important; /* Ensure messages appear above the stars background */
 }
 
 .chatbot-close-btn {
   position: absolute !important;
-  top: -10px !important;
-  right: -10px !important;
-  width: 30px !important;
-  height: 30px !important;
-  background: linear-gradient(135deg, #ff3547, #ff5252) !important;
+  top: -12px !important;
+  right: -12px !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: linear-gradient(135deg, #8c00ff, #c770f0) !important; /* Purple gradient matching theme */
   border-radius: 50% !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
   color: white !important;
-  font-size: 20px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
   z-index: 1001 !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(199, 112, 240, 0.4) !important;
   transition: all 0.2s ease !important;
 }
 
 .chatbot-close-btn:hover {
   transform: scale(1.1) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(199, 112, 240, 0.6) !important;
+  background: linear-gradient(135deg, #9d20ff, #d683ff) !important; /* Lighter purple on hover */
 }
 
 @keyframes buttonPulse {
