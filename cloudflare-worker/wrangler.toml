@@ -1,0 +1,6 @@
+name = "mohnish-gemini-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-10-01"
+
+# Bind secrets at deploy time via wrangler secrets
+# GEMINI_API_KEY is stored securely and never in the repo

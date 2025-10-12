@@ -39,58 +39,18 @@ export default function ActionProvider({ createChatBotMessage: createMsg, setSta
   const handleGeminiResponse = async (message) => {
     const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
     const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
+    const proxyUrl = process.env.REACT_APP_GEMINI_PROXY_URL;
+    const reqId = Math.random().toString(36).slice(2);
+    const t0 = Date.now();
 
     try {
-      if (!apiKey || !genAI) {
-        const fallback = generateFallbackResponse(message);
-        pushHistory('assistant', fallback);
-        const botMessage = createMsg(fallback);
-        setState((prev) => ({ ...prev, messages: [...prev.messages, botMessage] }));
-        return;
-      }
-
-      try { await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`); } catch (_) {}
-      const model = genAI.getGenerativeModel({ model: 'models/gemini-2.5-flash' });
-
+      // Record the user's message in history first
       pushHistory('user', message);
 
-      const systemPrompt = `
-You are a conversational assistant for Mohnish Kodukulla's portfolio website. Follow these MANDATORY guidelines:
-
-1. NEVER provide comprehensive answers. Keep responses to 15 words or less.
-2. When asked about Mohnish's background, only mention ONE detail (education OR skills OR projects).
-3. ALWAYS end with a short follow-up question - this is REQUIRED.
-4. NEVER list multiple projects, skills, or details in one response.
-5. Information should be revealed gradually over multiple exchanges.
-6. MAINTAIN CONTEXT from previous messages in the conversation.
-
-Basic Facts (choose only ONE when asked about Mohnish):
-- 3rd-year CSE student at VIT Chennai 
-- Focused on Full-Stack development
-- Works with MERN stack and cloud technologies
-- Interested in AI development
-
-Projects (mention only ONE project name with minimal description):
-- HintGen: AI-based learning assistance
-- SALS: Adaptive learning platform
-- SoilClassification: AI soil analysis
-- CN Project: Hospital network monitoring
-- OS Tool: CPU scheduling visualization
-
-Mandatory Follow-up Questions (ALWAYS include one):
-- "Would you like to know about his projects?"
-- "Curious about his technical skills?"
-- "Interested in his education details?"
-- "Want to know how to contact him?"
-- "Which aspect interests you most?"
-
-Contact: Only provide contact details if specifically asked.
-Resume: Only share link if specifically requested.
-`;
-
+      // Build a concise conversation context string
       let conversationContext = '';
       if (historyRef.current.length > 1) {
-        conversationContext = '\n\nConversation History:\n';
+        conversationContext = '\n\nConversation so far:\n';
         const startIdx = Math.max(0, historyRef.current.length - 6);
         for (let i = startIdx; i < historyRef.current.length; i++) {
           const entry = historyRef.current[i];
@@ -98,33 +58,82 @@ Resume: Only share link if specifically requested.
         }
       }
 
-      const prompt = systemPrompt + 
-      `\n\n⚠️ MANDATORY RULES - VIOLATION NOT PERMITTED ⚠️
-      1. Response MUST be 15 words maximum - NO EXCEPTIONS
-      2. ALWAYS end with a question - REQUIRED
-      3. When asked about Mohnish, give ONE fact only
-      4. NEVER provide comprehensive descriptions
-      5. Response format: Brief statement + follow-up question
-      6. Consider the conversation history for context` +
-      conversationContext +
-      '\n\nUser (current message): ' + message;
+      // If a secure proxy is configured, prefer sending the request there
+      if (proxyUrl) {
+        try {
+          console.info('[chat] proxy_request', { reqId, url: proxyUrl, messageLen: message?.length || 0, historyLen: historyRef.current.length });
+          const res = await fetch(proxyUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, history: historyRef.current })
+          });
+          if (res.ok) {
+            const data = await res.json();
+            let response = data.reply || data.text || data.message || '';
+            if (!response || typeof response !== 'string' || response.trim().length === 0) {
+              response = generateFallbackResponse(message);
+            }
+            if (response && response.length > 1200) {
+              response = response.slice(0, 1100) + '...';
+            }
+            console.info('[chat] proxy_success', { reqId, durationMs: Date.now() - t0, replyLen: response.length });
+            pushHistory('assistant', response);
+            const botMessage = createMsg(response);
+            setState((prev) => ({ ...prev, messages: [...prev.messages, botMessage] }));
+            return;
+          }
+          console.warn('[chat] proxy_non_ok', { reqId, status: res.status });
+        } catch (_) {
+          console.warn('[chat] proxy_error', { reqId });
+          // If proxy call fails, continue to direct API or fallback
+        }
+      }
+
+      // If no API key available, use fallback
+      if (!apiKey || !genAI) {
+        console.info('[chat] fallback_no_api', { reqId, durationMs: Date.now() - t0 });
+        const fallback = generateFallbackResponse(message);
+        pushHistory('assistant', fallback);
+        const botMessage = createMsg(fallback);
+        setState((prev) => ({ ...prev, messages: [...prev.messages, botMessage] }));
+        return;
+      }
+
+      // Light connectivity check (non-blocking)
+  try { await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`); } catch (_) {}
+      const model = genAI.getGenerativeModel({ model: 'models/gemini-2.5-flash' });
+
+      // Friendly, natural system prompt
+      const systemPrompt = `
+You are the friendly portfolio assistant for Mohnish Kodukulla.
+Be natural, helpful, and concise (about 1–3 short sentences).
+Give a brief, clear answer first. If the question is broad (e.g., "tell about him"),
+share a quick overview and offer to provide more details on request.
+Use prior messages as context to avoid repeating info.
+You can mention projects, skills, education, or contact when relevant.
+Tone: warm, professional, and human—no rigid rules or bullet spam.
+`;
+
+      const prompt = systemPrompt +
+        (conversationContext ? `${conversationContext}` : '') +
+        '\n\nUser: ' + message + '\nAssistant:';
 
       const result = await model.generateContent(prompt);
       let response = result.response?.text ? result.response.text() : '';
       if (!response || typeof response !== 'string' || response.trim().length === 0) {
         response = generateFallbackResponse(message);
       }
-      if (response.split(' ').length > 30) {
-        response = response.split('.')[0] + '? Would you like to know more?';
+      // Soft safety trim for very long generations
+      if (response && response.length > 1200) {
+        response = response.slice(0, 1100) + '...';
       }
-      if (!response.includes('?')) {
-        response += ' What would you like to know about him?';
-      }
+      console.info('[chat] direct_api_success', { reqId, durationMs: Date.now() - t0, replyLen: response.length });
 
       pushHistory('assistant', response);
       const botMessage = createMsg(response);
       setState((prev) => ({ ...prev, messages: [...prev.messages, botMessage] }));
     } catch (error) {
+      console.error('[chat] direct_api_error', { reqId, durationMs: Date.now() - t0, message: (error && error.message) || String(error) });
       const fallback = generateFallbackResponse(message);
       const errorMessage = createMsg(fallback);
       setState((prev) => ({ ...prev, messages: [...prev.messages, errorMessage] }));
