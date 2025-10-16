@@ -23,6 +23,8 @@
   background: transparent;
   transform-style: preserve-3d;
   perspective: 1000px;
+  max-width: 100% !important; /* Ensure it doesn't overflow the screen */
+  max-height: 90vh !important; /* Ensure it doesn't overflow the screen */
 }
 
 /* Glass effect for the entire chatbot */
@@ -42,6 +44,18 @@
   overflow: hidden !important;
   position: relative !important;
   animation: borderGlow 5s infinite alternate !important;
+  display: flex !important; /* Add flex display */
+  flex-direction: column !important; /* Stack child elements vertically */
+  height: 100% !important; /* Full height */
+}
+
+/* Fix inner container */
+.react-chatbot-kit-chat-inner-container {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: transparent !important; /* Ensure no white background */
+  overflow: hidden !important;
 }
 
 @keyframes borderGlow {
@@ -118,6 +132,7 @@
   align-items: center !important;
   justify-content: space-between !important;
   width: 100% !important; /* Ensure input container spans full width */
+  margin-bottom: 0 !important; /* Ensure no margin at bottom */
 }
 
 /* Input box */
@@ -209,6 +224,7 @@
   scrollbar-color: rgba(199, 112, 240, 0.7) rgba(40, 20, 60, 0.3) !important;
   -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
   overscroll-behavior: contain !important; /* Prevent scroll chaining */
+  flex: 1 !important; /* Take available space in flex container */
   /* display: flex !important; */
   /*flex-direction: column !important;  Stack messages vertically */
   /*align-items: flex-start !important;  Align all content to the left */
@@ -489,6 +505,10 @@
   transform-origin: bottom right !important;
   animation: chatOpen 260ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
   opacity: 0; /* Start hidden, animation will bring to 1 */
+  display: flex !important; /* Add flex display */
+  flex-direction: column !important; /* Stack child elements vertically */
+  overflow: hidden !important; /* Prevent any content overflow */
+  background: transparent !important; /* Ensure background is transparent */
 }
 
 @keyframes chatOpen {
@@ -512,6 +532,7 @@
   width: 100% !important; /* Full width container */
   margin: 8px 0 !important; /* Add vertical spacing between message groups */
   align-items: flex-start !important; /* Align items to the start */
+  flex-wrap: wrap !important; /* Allow wrapping on small screens */
 }
 
 /* Space between messages */
@@ -577,75 +598,153 @@
 /* Tablet Styles */
 @media screen and (max-width: 768px) {
   .chatbot-wrapper {
-    width: 350px !important;
-    height: 480px !important;
+    width: 380px !important;
+    height: 500px !important;
+    max-height: 70vh !important; /* Limit height on tablets */
   }
   
   .react-chatbot-kit-chat-container {
-    width: 350px !important;
+    width: 380px !important;
+    max-height: 70vh !important;
   }
   
   .react-chatbot-kit-chat-message-container {
-    max-height: 350px !important;
+    max-height: calc(70vh - 110px) !important;
+    padding: 12px !important;
   }
   
   /* Adjust the container position for better access on tablets */
   .chatbot-container {
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  /* Slightly larger input for better tablet typing */
+  .react-chatbot-kit-chat-input {
+    padding: 12px 15px !important;
+    font-size: 15px !important;
+  }
+  
+  /* Make messages slightly more readable on tablets */
+  .react-chatbot-kit-chat-bot-message,
+  .react-chatbot-kit-user-chat-message {
+    max-width: 82% !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Reduce animation intensity slightly for better performance */
+  .chatbot-container {
+    animation: float 6s ease-in-out infinite !important; /* Slower animation */
   }
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 480px) {
   .chatbot-wrapper {
-    width: 90vw !important; /* Use viewport width to ensure it fits */
-    height: 450px !important;
+    width: 92vw !important; /* Use viewport width to ensure it fits */
+    height: 80vh !important; /* Use viewport height for better mobile fit */
+    max-height: 500px !important; /* Limit max height */
+    bottom: 0 !important; /* Position at the bottom of the screen */
+    right: 4% !important; /* Center it better */
+    margin: 0 !important; /* No margins */
+    padding: 0 !important; /* No padding */
+    overflow: hidden !important; /* No overflow */
   }
   
   .react-chatbot-kit-chat-container {
-    width: 90vw !important;
+    width: 92vw !important;
     border-radius: 12px !important;
-  }
-  
-  .react-chatbot-kit-chat-message-container {
-    max-height: 300px !important;
-    padding: 8px !important;
-  }
-  
-  .react-chatbot-kit-chat-header {
-    padding: 10px 12px !important;
-    font-size: 13px !important;
-  }
-  
-  .react-chatbot-kit-chat-input {
-    padding: 10px 12px !important;
-    font-size: 14px !important;
+    max-height: 80vh !important;
+    display: flex !important; /* Add flex display */
+    flex-direction: column !important; /* Stack child elements vertically */
+    height: 100% !important; /* Full height */
+    margin: 0 !important; /* Remove any margin */
+    padding-bottom: 0 !important; /* No padding bottom */
   }
   
   .react-chatbot-kit-chat-input-container {
-    padding: 10px 12px !important;
+    padding: 10px !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    background: linear-gradient(0deg, rgba(12, 5, 19, 0.8), rgba(80, 40, 120, 0.5)) !important;
+    z-index: 5 !important;
+    border-bottom: 0 !important; /* Ensure no gap at bottom */
+    margin-top: auto !important; /* Push to bottom of flex container */
+    border-bottom-left-radius: 12px !important; /* Match container border radius */
+    border-bottom-right-radius: 12px !important; /* Match container border radius */
+    margin-bottom: 0 !important; /* Ensure no margin at bottom */
+  }
+  
+  .react-chatbot-kit-chat-message-container {
+    max-height: calc(80vh - 110px) !important; /* Dynamic height based on viewport minus header/input */
+    padding: 10px 8px !important;
+    overflow-y: auto !important;
+    flex: 1 !important; /* Take up all available space */
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .react-chatbot-kit-chat-header {
+    padding: 12px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5 !important;
+  }
+  
+  .react-chatbot-kit-chat-input {
+    padding: 12px !important;
+    font-size: 16px !important; /* Better for touch typing */
+    border-radius: 18px !important;
+    margin-right: 5px !important;
+  }
+  
+  .react-chatbot-kit-chat-input-container {
+    padding: 10px !important;
+    position: relative !important; /* Changed from sticky to relative */
+    bottom: 0 !important;
+    background: linear-gradient(0deg, rgba(12, 5, 19, 0.8), rgba(80, 40, 120, 0.5)) !important;
+    z-index: 5 !important;
+    border-bottom: 0 !important; /* Ensure no gap at bottom */
+    margin-top: auto !important; /* Push to bottom of flex container */
+    border-bottom-left-radius: 12px !important; /* Match container border radius */
+    border-bottom-right-radius: 12px !important; /* Match container border radius */
+    margin-bottom: 0 !important; /* Ensure no margin at bottom */
+    min-height: 60px !important; /* Ensure consistent height */
   }
   
   /* Adjust the container position for optimal mobile experience */
   .chatbot-container {
-    bottom: 10px;
-    right: 5%;
+    bottom: 15px;
+    right: 4%;
+    left: auto;
+    margin: 0 auto;
+    width: 92vw !important;
     animation: none; /* Disable floating animation on mobile to save resources */
     filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
   }
   
   /* Make the toggle button slightly smaller on mobile */
   .chatbot-toggle-btn {
-    width: 55px !important;
-    height: 55px !important;
+    width: 52px !important;
+    height: 52px !important;
   }
   
   /* Adjust message bubbles for smaller screens */
   .react-chatbot-kit-chat-bot-message,
   .react-chatbot-kit-user-chat-message {
-    max-width: 85% !important; /* Allow messages to take up more width on small screens */
-    padding: 8px 12px !important; /* Slightly smaller padding */
+    max-width: 90% !important; /* Allow messages to take up more width on small screens */
+    padding: 10px 14px !important; /* Better padding for readability */
+    font-size: 15px !important; /* Slightly larger font for better readability */
+    line-height: 1.4 !important; /* Improved line height for readability */
+    margin-bottom: 10px !important; /* Better spacing between messages */
+  }
+  
+  /* Enhance bot avatar size and clarity */
+  .custom-bot-avatar {
+    width: 36px !important;
+    height: 36px !important;
   }
   
   /* Ensure animations are less resource intensive on mobile */
@@ -654,36 +753,101 @@
     50% { transform: translate(-15%, -10%) scale(1.05); opacity: 0.4; }
     100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
   }
+  
+  /* Fix any potential overflow issues */
+  .react-chatbot-kit-chat-container > * {
+    overflow: hidden !important;
+  }
 }
 
-/* Small Mobile Styles */
+  /* Small Mobile Styles */
 @media screen and (max-width: 360px) {
   .chatbot-wrapper {
-    width: 95vw !important;
-    height: 420px !important;
+    width: 96vw !important;
+    height: 85vh !important; /* Even more height on very small screens */
+    max-height: 500px !important;
   }
   
   .react-chatbot-kit-chat-container {
-    width: 95vw !important;
+    width: 96vw !important;
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(199, 112, 240, 0.2) !important; /* Lighter shadow for small screens */
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
   }
   
-  .react-chatbot-kit-chat-message-container {
-    max-height: 280px !important;
+  /* Fix any potential white space issues */
+  .react-chatbot-kit-chat-inner-container {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: linear-gradient(135deg, rgba(12, 5, 19, 0.5), rgba(200, 100, 240, 0.3)) !important;
+  }  .react-chatbot-kit-chat-message-container {
+    max-height: calc(85vh - 110px) !important;
+    padding: 8px 6px !important; /* Tighter padding */
+  }
+  
+  .react-chatbot-kit-chat-input {
+    padding: 10px !important;
+    border-radius: 16px !important;
   }
   
   /* Further reduce the size of the toggle button on very small screens */
   .chatbot-toggle-btn {
-    width: 50px !important;
-    height: 50px !important;
+    width: 48px !important;
+    height: 48px !important;
   }
   
   /* Position the chatbot to use almost the full screen width */
   .chatbot-container {
-    right: 2.5%;
+    right: 2%;
+    left: auto;
+    width: 96vw !important;
+    bottom: 12px;
+  }
+  
+  /* Adjust message bubbles for very small screens */
+  .react-chatbot-kit-chat-bot-message,
+  .react-chatbot-kit-user-chat-message {
+    max-width: 92% !important; /* Even more width on tiny screens */
+    padding: 8px 12px !important; /* Slightly smaller padding */
+    margin-bottom: 8px !important;
+  }
+  
+  /* Smaller close button for better proportion */
+  .chatbot-close-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
   }
   
   /* Simplify some animations to improve performance */
   .react-chatbot-kit-chat-container:before {
     animation: glowPulse 20s infinite !important; /* Slow down the animation */
+  }
+  
+  /* Disable some heavy animations completely */
+  .react-chatbot-kit-chat-message-container::before {
+    display: none !important; /* Remove cosmic stars effect on very small screens */
+  }
+}
+
+/* Special handling for portrait orientation on mobile devices */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .chatbot-wrapper {
+    height: 70vh !important; /* Slightly shorter in portrait to leave room for keyboard */
+    bottom: 10px !important;
+  }
+  
+  .react-chatbot-kit-chat-message-container {
+    max-height: calc(70vh - 110px) !important;
+  }
+  
+  /* Optimize touch target sizes for portrait mode */
+  .chatbot-toggle-btn {
+    width: 54px !important;
+    height: 54px !important;
   }
 }
