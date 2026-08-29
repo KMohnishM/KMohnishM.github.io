@@ -3,25 +3,15 @@ import { Col, Row } from "react-bootstrap";
 import {
   SiVisualstudiocode,
   SiAmazonaws,
-  SiDiscord,
-  SiGithubpages,
   SiWindows11,
   SiDocker,
   SiRedis,
-  SiGitlab,
+  SiGithubactions,
   SiPrometheus,
   SiGrafana,
-  SiSocketdotio,
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiJavascript,
-  SiPython,
-  SiDjango,
-  SiFlask,
-  SiNodedotjs,
-  SiMongodb,
   SiPostgresql,
+  SiCelery,
+  SiSqlalchemy,
 } from "react-icons/si";
 import { DiGit } from "react-icons/di";
 
@@ -35,40 +25,13 @@ function Toolstack() {
         <SiVisualstudiocode />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiJavascript />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiDocker />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedis />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMongodb />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
         <DiGit />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiGitlab />
+        <SiGithubactions />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiReact />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNodedotjs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiTailwindcss />
+        <SiDocker />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiAmazonaws />
@@ -80,13 +43,16 @@ function Toolstack() {
         <SiGrafana />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSocketdotio />
+        <SiPostgresql />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFlask />
+        <SiRedis />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiDjango />
+        <SiCelery />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiSqlalchemy />
       </Col>
     </Row>
   );

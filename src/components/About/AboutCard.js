@@ -8,13 +8,13 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi, I am <span className="purple">Mohnish Kodukulla</span>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span> (CGPA: <span className="purple">9.31/10</span>).
+            Hi, I am <span className="purple">Mohnish Kodukulla</span>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span> (GPA: <span className="purple">9.28/10</span>) and a <span className="purple">Google Summer of Code 2026</span> contributor at <span className="purple">Debezium</span>.
             <br />
-            I am passionate about <span className="purple">Full-Stack Development</span>, <span className="purple">Cloud Infrastructure</span>, and <span className="purple">AI-driven systems</span>.
+            I build systems at the intersection of <span className="purple">backend engineering</span>, <span className="purple">AI infrastructure</span>, and <span className="purple">distributed systems</span> - from open-source CDC pipelines to cloud-native monitoring stacks and adaptive learning platforms.
             <br />
-            Experienced with <span className="purple">MERN stack</span>, <span className="purple">Next.js</span>, <span className="purple">Redis</span>, <span className="purple">Docker</span>, <span className="purple">Prometheus</span>, <span className="purple">Grafana</span>, <span className="purple">Generative AI</span>, and <span className="purple">LLM-based workflows</span>.
+            My stack: <span className="purple">FastAPI</span>, <span className="purple">Django</span>, <span className="purple">LangChain</span>, <span className="purple">LangGraph</span>, <span className="purple">RAG</span>, <span className="purple">Docker</span>, <span className="purple">PostgreSQL</span>, <span className="purple">Prometheus</span>, and <span className="purple">AWS EC2</span>.
             <br />
-            I enjoy building at the intersection of <span className="purple">systems engineering</span> and <span className="purple">AI</span>, and thrive in fast-paced, exploratory environments.
+            I care about open source, observable systems, and engineering that works in production.
             <br />
             <br />
             <strong className="purple">Education:</strong>

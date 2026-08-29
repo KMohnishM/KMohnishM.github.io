@@ -19,23 +19,20 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I am <strong className="purple">Mohnish Kodukulla</strong>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span>, passionate about <span className="purple">Full-Stack Development</span>, <span className="purple">Cloud Infrastructure</span>, and <span className="purple">AI-driven systems</span>.
+              I am <strong className="purple">Mohnish Kodukulla</strong>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span> and a <span className="purple">Google Summer of Code 2026</span> contributor at <span className="purple">Debezium</span>, where I build AI infrastructure for real-time change-data-capture pipelines.
               <br />
               <br />
-              I have built and deployed end-to-end applications using the <span className="purple">MERN stack</span>, <span className="purple">Next.js</span>, <span className="purple">Redis</span>, and <span className="purple">Docker</span>, and have experience managing real-time systems and monitoring pipelines using <span className="purple">Prometheus</span> and <span className="purple">Grafana</span>.
+              I design and ship systems at the intersection of <span className="purple">backend engineering</span>, <span className="purple">distributed infrastructure</span>, and <span className="purple">applied AI</span> - from CDC-to-vector-store sync libraries to competitive coding platforms and cloud-native monitoring stacks.
               <br />
               <br />
-              My projects integrate scalable backend architectures with intelligent components, including <span className="purple">Generative AI</span> and <span className="purple">LLM-based workflows</span>.
+              My work spans <span className="purple">LangChain</span>, <span className="purple">LangGraph</span>, and <span className="purple">RAG pipelines</span> on the AI side, and <span className="purple">FastAPI</span>, <span className="purple">Django</span>, <span className="purple">PostgreSQL</span>, <span className="purple">Docker</span>, <span className="purple">Prometheus</span>, and <span className="purple">AWS EC2</span> on the infrastructure side.
               <br />
               <br />
-              I am particularly drawn to solving problems at the intersection of <span className="purple">systems engineering</span> and <span className="purple">AI</span>, including real-time collaboration, anomaly detection, and adaptive learning platforms.
-              <br />
-              <br />
-              I thrive in fast-paced, exploratory environments and am always eager to push boundaries with <span className="purple">automation</span>, <span className="purple">optimization</span>, and <span className="purple">meaningful tech applications</span>.
+              I contribute to open source, solve engineering problems end-to-end, and care deeply about <span className="purple">systems that are observable, reliable, and purposeful</span>.
               <br />
               <br />
               <span>
-                Forever eager to <strong className="purple">learn</strong>, <strong className="purple">innovate</strong>, and <strong className="purple">push boundaries</strong> — one system at a time.
+                Building systems that <strong className="purple">work in production</strong>, not just in demos - one architecture at a time.
               </span>
             </p>
           </Col>

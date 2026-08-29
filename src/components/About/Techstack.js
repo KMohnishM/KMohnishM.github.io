@@ -4,18 +4,18 @@ import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiReact,
-  DiNodejs,
-  DiMongodb,
   DiPython,
-  DiGit,
   DiJava,
 } from "react-icons/di";
 import {
-  
   SiTailwindcss,
+  SiNextdotjs,
+  SiFlask,
+  SiDjango,
+  SiFastapi,
+  SiLangchain,
+  SiTypescript,
 } from "react-icons/si";
-import { SiNextdotjs, SiFlask, SiDjango, SiOpenai } from "react-icons/si";
-
 
 function Techstack() {
   return (
@@ -25,6 +25,9 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiJavascript1 />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiTypescript />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <CgCPlusPlus />
@@ -42,13 +45,16 @@ function Techstack() {
         <SiTailwindcss />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
+        <SiFastapi />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
         <SiFlask />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiDjango />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiOpenai />
+        <SiLangchain />
       </Col>
     </Row>
   );
