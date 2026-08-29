@@ -1,27 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.abcccab7.css",
-    "main.js": "/static/js/main.7a0e53b6.js",
+    "main.css": "/static/css/main.d2b46343.css",
+    "main.js": "/static/js/main.06ca3bc9.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/blog.png": "/static/media/blog.e96077f84b1edaef353c.png",
+    "static/media/pydebeziumai.png": "/static/media/pydebeziumai.224c7298093c96122a3d.png",
+    "static/media/sals.png": "/static/media/sals.5356ac19901140c17353.png",
+    "static/media/healthcare_analytics.png": "/static/media/healthcare_analytics.29c9bfa3f9c422263c35.png",
+    "static/media/trademarkia_ai.png": "/static/media/trademarkia_ai.5d7010ea7935b1f71a27.png",
+    "static/media/coding_platform.png": "/static/media/coding_platform.0afa60201373f4910ccc.png",
+    "static/media/learnsql_ai.png": "/static/media/learnsql_ai.6b431585d530e3e1578c.png",
+    "static/media/aws_cloud.png": "/static/media/aws_cloud.086662a1ce73131c2a8c.png",
+    "static/media/reddit_marketing.png": "/static/media/reddit_marketing.67da1b87c84128a130b0.png",
     "static/media/logo.png": "/static/media/logo.3c1b9dfc9ee2c3ec8c6e.png",
-    "static/media/codeEditor.png": "/static/media/codeEditor.1b585492490c8c1cace9.png",
     "static/media/Homepg.svg": "/static/media/Homepg.75041469660d97fab2bfd96cd9b582b6.svg",
+    "static/media/MohnishKodukulla_Resume.pdf": "/static/media/MohnishKodukulla_Resume.edf0126654d1d567719b.pdf",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
-    "static/media/CV_upd.pdf": "/static/media/CV_upd.840acb631cfedf23ffa0.pdf",
-    "static/media/leaf.png": "/static/media/leaf.85695229f481c403fa98.png",
     "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
     "static/media/Av.svg": "/static/media/Av.f52cb6d4e921bf6e8f725d4a7dac5a94.svg",
     "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/index.html",
-    "main.abcccab7.css.map": "/static/css/main.abcccab7.css.map",
-    "main.7a0e53b6.js.map": "/static/js/main.7a0e53b6.js.map",
+    "main.d2b46343.css.map": "/static/css/main.d2b46343.css.map",
+    "main.06ca3bc9.js.map": "/static/js/main.06ca3bc9.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abcccab7.css",
-    "static/js/main.7a0e53b6.js"
+    "static/css/main.d2b46343.css",
+    "static/js/main.06ca3bc9.js"
   ]
 }
