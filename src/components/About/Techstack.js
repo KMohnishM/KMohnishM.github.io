@@ -13,7 +13,7 @@ import {
   SiFlask,
   SiDjango,
   SiFastapi,
-  SiLangchain,
+  SiOpenai,
   SiTypescript,
 } from "react-icons/si";
 
@@ -54,7 +54,7 @@ function Techstack() {
         <SiDjango />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiLangchain />
+        <SiOpenai />
       </Col>
     </Row>
   );
