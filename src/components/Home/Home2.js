@@ -19,7 +19,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I am <strong className="purple">Mohnish Kodukulla</strong>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span> and a <span className="purple">Google Summer of Code 2026</span> contributor at <span className="purple">Debezium</span>, where I build AI infrastructure for real-time change-data-capture pipelines.
+              I am <strong className="purple">Mohnish Kodukulla</strong>, a 4th-year CSE student at <span className="purple">VIT Chennai</span> and a <span className="purple">Google Summer of Code 2026</span> contributor at <span className="purple">Debezium</span>, where I build AI infrastructure for real-time change-data-capture pipelines.
               <br />
               <br />
               I design and ship systems at the intersection of <span className="purple">backend engineering</span>, <span className="purple">distributed infrastructure</span>, and <span className="purple">applied AI</span> - from CDC-to-vector-store sync libraries to competitive coding platforms and cloud-native monitoring stacks.

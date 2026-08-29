@@ -31,8 +31,8 @@ export default function ActionProvider({ createChatBotMessage: createMsg, setSta
       return `${one}: brief overview only on request. ${ask()}`;
     }
     if (/skill|stack|tech|tools|technology/.test(msg)) return `He works with MERN and cloud. ${ask()}`;
-    if (/educat|college|vit|degree|cgpa|study/.test(msg)) return `3rd-year CSE at VIT Chennai. ${ask()}`;
-    if (/who|about|him|intro|tell/.test(msg)) return `He’s a 3rd-year CSE student into full‑stack and AI. ${ask()}`;
+    if (/educat|college|vit|degree|cgpa|study/.test(msg)) return `4th-year CSE at VIT Chennai. ${ask()}`;
+    if (/who|about|him|intro|tell/.test(msg)) return `He’s a 4th-year CSE student into full‑stack and AI. ${ask()}`;
     return `Got it. I’ll keep answers brief. ${ask()}`;
   };
 
@@ -108,7 +108,7 @@ export default function ActionProvider({ createChatBotMessage: createMsg, setSta
 You are Mohnish's AI, a personalized assistant for Mohnish Kodukulla's portfolio that helps visitors learn about him.
 
 About Mohnish:
-- 3rd-year CSE student at VIT Chennai, GPA: 9.28/10
+- 4th-year CSE student at VIT Chennai, GPA: 9.28/10
 - Google Summer of Code 2026 contributor at Debezium (AI Infrastructure & Developer Tooling)
 - Software Engineer specializing in AI Systems, Backend Engineering, and Distributed Infrastructure
 - Open source contributor across 4 Debezium repositories with 6+ merged PRs

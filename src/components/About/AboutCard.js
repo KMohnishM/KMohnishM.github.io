@@ -8,7 +8,7 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi, I am <span className="purple">Mohnish Kodukulla</span>, a 3rd-year CSE student at <span className="purple">VIT Chennai</span> (GPA: <span className="purple">9.28/10</span>) and a <span className="purple">Google Summer of Code 2026</span> contributor at <span className="purple">Debezium</span>.
+            Hi, I am <span className="purple">Mohnish Kodukulla</span>, a 4th-year CSE student at <span className="purple">VIT Chennai</span> (GPA: <span className="purple">9.28/10</span>) and a <span className="purple">Google Summer of Code 2026</span> contributor at <span className="purple">Debezium</span>.
             <br />
             I build systems at the intersection of <span className="purple">backend engineering</span>, <span className="purple">AI infrastructure</span>, and <span className="purple">distributed systems</span> - from open-source CDC pipelines to cloud-native monitoring stacks and adaptive learning platforms.
             <br />
