@@ -19,9 +19,9 @@ function AboutCard() {
             <br />
             <strong className="purple">Education:</strong>
             <ul>
-              <li><span className="purple">B.Tech in Computer Science and Engineering</span>, <span className="purple">VIT Chennai</span> (2023–Present)</li>
-              <li><span className="purple">Senior Secondary (Class 12)</span>, Sri Chaitanya Junior College, Visakhapatnam (2022–2023), <span className="purple">91.2%</span></li>
-              <li><span className="purple">Secondary School (Class 10)</span>, Sri Chaitanya School, Kakinada (2020–2021), <span className="purple">98.5%</span></li>
+              <li><span className="purple">B.Tech in Computer Science and Engineering</span>, <span className="purple">VIT Chennai</span> (2023-Present)</li>
+              <li><span className="purple">Senior Secondary (Class 12)</span>, Sri Chaitanya Junior College, Visakhapatnam (2022-2023), <span className="purple">91.2%</span></li>
+              <li><span className="purple">Secondary School (Class 10)</span>, Sri Chaitanya School, Kakinada (2020-2021), <span className="purple">98.5%</span></li>
             </ul>
           </p>
           <ul>
@@ -37,9 +37,9 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "violet" }}>
-            "Displicine and continous Effort can only make the difference"{" "}
+            "Discipline and continuous Effort can only make the difference"{" "}
           </p>
-          <footer className="blockquote-footer">Mohinsh</footer>
+          <footer className="blockquote-footer">Mohnish</footer>
         </blockquote>
       </Card.Body>
     </Card>

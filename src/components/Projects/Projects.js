@@ -39,7 +39,7 @@ function Projects() {
             <ProjectCard
               imgPath={pydebeziumai}
               isBlog={false}
-              title={<><span className="purple">pydebeziumai</span> – Real-time RAG Sync</>}
+              title={<><span className="purple">pydebeziumai</span> - Real-time RAG Sync</>}
               description="A real-time Change Data Capture (CDC) integration library that bridges Debezium change streams with LangChain and LangGraph vector stores (Chroma, PGVector, Milvus) for live RAG synchronization. Eliminates vector database staleness by streaming relational updates instantly."
               ghLink="http://github.com/debezium/debezium-ai-python/"
             />
@@ -59,7 +59,7 @@ function Projects() {
             <ProjectCard
               imgPath={sals}
               isBlog={false}
-              title={<><span className="purple">SALS</span> – Smart Adaptive Learning</>}
+              title={<><span className="purple">SALS</span> - Smart Adaptive Learning</>}
               description="A personalized learning platform that adapts in real-time to students' strengths and weaknesses using diagnostic quizzes, performance analytics, and tailored content flows. Built with Django, React, LangChain, and OpenRouter for dynamic question generation."
               ghLink="https://github.com/KMohnishM/SALS"
             />
@@ -79,7 +79,7 @@ function Projects() {
             <ProjectCard
               imgPath={learnsqlAi}
               isBlog={false}
-              title={<><span className="purple">LearnSQL.ai</span> – Interactive Tutor</>}
+              title={<><span className="purple">LearnSQL.ai</span> - Interactive Tutor</>}
               description="An AI-powered interactive SQL learning platform with practice modules, chatbot assistance, and dynamic analytics. Leverages FastAPI, React, PostgreSQL, and Gemini 2.0 Flash via OpenRouter for instant query evaluation and custom tutoring."
               ghLink="https://github.com/KMohnishM/LearnSQL.ai"
             />
@@ -89,7 +89,7 @@ function Projects() {
             <ProjectCard
               imgPath={codingPlatform}
               isBlog={false}
-              title={<><span className="purple">Coding Platform</span> – AI Competitive Coding</>}
+              title={<><span className="purple">Coding Platform</span> - AI Competitive Coding</>}
               description="A full-stack AI-powered competitive coding platform with hint system, code execution, community, and analytics. Built with Django, React, Vite, Tailwind CSS, PostgreSQL, Monaco Editor, and LangChain for adaptive problem-solving and AI-guided hints."
               ghLink="https://github.com/KMohnishM/Coding_Platform"
             />
