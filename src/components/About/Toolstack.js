@@ -11,7 +11,7 @@ import {
   SiGrafana,
   SiPostgresql,
   SiCelery,
-  SiSqlalchemy,
+  SiSqlite,
 } from "react-icons/si";
 import { DiGit } from "react-icons/di";
 
@@ -52,7 +52,7 @@ function Toolstack() {
         <SiCelery />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSqlalchemy />
+        <SiSqlite />
       </Col>
     </Row>
   );
